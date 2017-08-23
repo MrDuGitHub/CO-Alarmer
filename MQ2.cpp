@@ -1,12 +1,12 @@
 #include"MQ2.H"
 #include<Arduino.h>
 
-float reset_MQ2()
+float reset_MQ2()//计算洁净空气数值R0
 {
-  float sensor_volt = 0;
+  float sensor_volt = 0;//传感器电压
   float RS_air = 0; //  Get the value of RS via in a clear air
   float R0 = 0; // Get the value of R0 via in H2
-  float sensorValue = 0;
+  float sensorValue = 0;//传感器数值
 
   /*--- Get a average data by testing 100 times ---*/
   for (int x = 0 ; x < 100 ; x++)
@@ -21,7 +21,7 @@ float reset_MQ2()
   return R0;
 }
 
-float get_ratio(float R0)
+float get_ratio(float R0)   //得到当前空气指数与洁净空气指数R0的比值
 {
   float R=R0;
   float sensor_volt;

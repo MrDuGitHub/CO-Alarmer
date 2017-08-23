@@ -1,43 +1,25 @@
 #include "Buzzer.h"
 
-int pinBuzzer = A1;
-int frequency = 350;
-
 void Buzzer_Init()
 {
   pinMode(pinBuzzer, OUTPUT);
 }
 
-void Buzzer_()
+void Buzzer_()      
 {
-  for (int i = 500; i <= 1000; i++) 
-  {
-    tone(pinBuzzer, i);
-    delay(10);
-  }
-  for (int i = 1000; i <= 500; i--) 
-  {
-    tone(pinBuzzer, i);
-    delay(10);
-  }
+    for (int i=500;i<=1000;i++)
+      newtone(15,i);
+    for (int i=1000;i>=500;i--)
+      newtone(15,i);
 }
 
 void Buzzer_stop()
 {
-  noTone(pinBuzzer);
 }
 
-/*
-void warning(SoftwareSerial mySerialWifi)
-{
-  mySerialWifi.println("AT+CIPSTART=\"TCP\",\"123.207.162.211\",8888"); // AT+CIPSTART="TCP","192.168.1.153",9994
-  delay(100);
-  mySerialWifi.println("AT+CIPSEND=1");
-  delay(50);
-  mySerialWifi.print(0);
-}
-
-void newtone(int duration)
+//模拟tone以消除tone函数和红外模块的冲突
+//durtion为频率frequency作用的周期
+void newtone(int duration,int frequency)  
 {
   int period = 1000000L / frequency;
   int pulse = period / 2;
@@ -49,4 +31,4 @@ void newtone(int duration)
     delayMicroseconds(pulse);
   }
 }
-*/
+

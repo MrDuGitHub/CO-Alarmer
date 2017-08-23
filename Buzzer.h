@@ -1,12 +1,13 @@
 #ifndef BUZZER_H_INCLUDED
 #define BUZZER_H_INCLUDED
 #include <Arduino.h>
-//#include <SoftwareSerial.h>
+
+const int pinBuzzer = A1; //A1为输出端口
 
 void Buzzer_Init();
 void Buzzer_();
-//void newtone(int duration);
+void newtone(int duration,int frequency);
 void Buzzer_stop();
-//void warning(SoftwareSerial mySerialWifi);
+
 #endif // BUZZER_H_INCLUDED
 
