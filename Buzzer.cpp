@@ -15,6 +15,11 @@ void Buzzer_()
     tone(pinBuzzer, i);
     delay(10);
   }
+  for (int i = 1000; i <= 500; i--) 
+  {
+    tone(pinBuzzer, i);
+    delay(10);
+  }
 }
 
 void Buzzer_stop()
@@ -22,6 +27,7 @@ void Buzzer_stop()
   noTone(pinBuzzer);
 }
 
+/*
 void warning(SoftwareSerial mySerialWifi)
 {
   mySerialWifi.println("AT+CIPSTART=\"TCP\",\"123.207.162.211\",8888"); // AT+CIPSTART="TCP","192.168.1.153",9994
@@ -43,4 +49,4 @@ void newtone(int duration)
     delayMicroseconds(pulse);
   }
 }
-
+*/

@@ -11,7 +11,7 @@ float reset_MQ2()
   /*--- Get a average data by testing 100 times ---*/
   for (int x = 0 ; x < 100 ; x++)
   {
-    sensorValue = sensorValue + analogRead(A2);
+    sensorValue = sensorValue + analogRead(A0);
   }
   sensorValue = sensorValue / 100.0;
 
@@ -28,7 +28,7 @@ float get_ratio(float R0)
   float RS_gas; // Get value of RS in a GAS
   float ratio; // Get ratio RS_GAS/RS_air
   int sensorValue;
-  sensorValue = analogRead(A2);
+  sensorValue = analogRead(A0);
   sensor_volt = (float)sensorValue / 1024 * 5.0;
   RS_gas = (5.0 - sensor_volt) / sensor_volt; // omit *RL
   ratio = RS_gas / R; // ratio = RS/R0
